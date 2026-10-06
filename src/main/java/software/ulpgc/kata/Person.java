@@ -1,18 +1,34 @@
 package software.ulpgc.kata;
 
-import java.time.DayOfWeek;
 import java.time.LocalDate;
 
-public record Person(String name, LocalDate birthday) {
+public class Person {
+    private final String name;
+    private  final LocalDate birthday;
 
-    public static double DAYS_PER_YEAR = 0;
-
-    public int age(){
-        return toYears(LocalDate.now().toEpochDay() - birthday.toEpochDay());  //edad en dias
+    public Person(String name, LocalDate birthday) {
+        this.name = name;
+        this.birthday = birthday;
     }
 
-    private int toYears(long days){
-        return (int) (days / DAYS_PER_YEAR);
+    public String getName() {
+        return name;
+    }
 
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public int age(){
+        return toYear(LocalDate.now().toEpochDay() - birthday.toEpochDay());
+    }
+
+    public int toYear(long day){
+        return (int) (day / 365.25);
+    }
+
+    @Override
+    public String toString() {
+        return "Person { " + "name="+ name + ", age =" + age() + "}";
     }
 }
