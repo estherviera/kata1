@@ -56,4 +56,4 @@ Tener instalado un JDK compatible con la versión configurada en `pom.xml` y Mav
 
 ## 7. Vídeo explicativo
 
-**Vídeo de la kata:** FALTA EL ENLACE
+**Vídeo de la kata:** https://youtu.be/U706766WJr4
